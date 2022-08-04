@@ -7,14 +7,24 @@
 
 import Foundation
 
-class PS3Client {
-    let PS3Ip: String
-    let PS3Port: Int
+
+
+class MAPIClient {
+    let PS3URL: URL
     let HttpClient = URLSession.shared
     
-    init (hostname: String, port: Int){
-        PS3Ip = hostname
-        PS3Port = port
+    
+    init (hostname: String, port: Int) throws{
+        if let url = URL(string: "http://\(hostname)\(port)") {
+            PS3URL = url
+        } else {
+            throw MAPIErrors.InvalidURL
+        }
     }
+    
+    func ringBuzzer(buzzermode: BUZZER){
+        HttpClient.dataTask(with: URLRequest(url: PS3URL.appendingPathComponent("/buzzer.ps3mapi?mode=\(buzzermode.hashValue)")))
+    }
+    
     
 }

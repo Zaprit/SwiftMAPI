@@ -1,3 +1,3 @@
 # SwiftMAPI
 
-A description of this package.
+An implementation of PS3_MAPI for swift

@@ -5,11 +5,16 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftMAPI",
+    platforms: [
+        .macOS(.v10_11),
+        .iOS(.v10),
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "SwiftMAPI",
-            targets: ["SwiftMAPI"]),
+//        // Products define the executables and libraries a package produces, and make them visible to other packages.
+//        .library(
+//            name: "SwiftMAPI",
+//            targets: ["SwiftMAPI"]),
+        .executable(name: "SwiftMAPI", targets: ["SwiftMAPI"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
