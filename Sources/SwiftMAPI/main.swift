@@ -14,7 +14,7 @@ import FoundationNetworking
 func main() {
     do {
         let client = try MAPIClient(hostname: "192.168.0.62", port: 80)
-        client.ringBuzzer();
+        client.ringBuzzer(buzzermode: .TRIPLE);
     } catch {
         print("idfk dude, some shit went tits up")
     }
