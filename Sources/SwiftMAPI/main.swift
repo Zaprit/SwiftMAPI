@@ -7,9 +7,6 @@
 
 import Foundation
 
-#if canImport(FoundationNetworking) // thanks swift on linux
-import FoundationNetworking
-#endif
 
 func main() {
     do {
